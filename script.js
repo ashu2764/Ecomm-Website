@@ -95,23 +95,52 @@ const fetchProducts = async () => {
     }
 };
 
+// const renderProducts = (productList) => {
+//     productContainer.innerHTML = ''; // Clear any previous products
+//     productList.forEach((item, index) => {
+//         const product = item.product;
+//         const productCard = document.createElement('div');
+//         productCard.className = 'product-card';
+//         productCard.style.animationDelay = `${index * 0.1}s`; // Staggered fade-in
+//         productCard.innerHTML = `
+//             <img src="${product.image?.src || 'https://via.placeholder.com/150'}" alt="${product.title}">
+//             <div class="details">
+//                 <h3>${product.title}</h3>
+//                 <p><strong>Price:</strong> ₹${parseFloat(product.variants[0].price).toFixed(2)}</p>
+//             </div>
+//         `;
+//         productContainer.appendChild(productCard);
+//     });
+// };
 const renderProducts = (productList) => {
     productContainer.innerHTML = ''; // Clear any previous products
-    productList.forEach((item, index) => {
-        const product = item.product;
+    productList.forEach((product, index) => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.style.animationDelay = `${index * 0.1}s`; // Staggered fade-in
+
         productCard.innerHTML = `
-            <img src="${product.image?.src || 'https://via.placeholder.com/150'}" alt="${product.title}">
+            <img src="${product.product.image.src}" alt="${product.product.title}">
             <div class="details">
-                <h3>${product.title}</h3>
-                <p><strong>Price:</strong> ₹${parseFloat(product.variants[0].price).toFixed(2)}</p>
+                <h3>${product.product.title}</h3>
+                <p>${product.product.vendor}</p>
+                <p><strong>Price:</strong> Rs. ${parseFloat(product.product.variants[0].price).toFixed(2)}</p>
+                <button class="add-to-cart-button">Add to Cart</button>
             </div>
         `;
         productContainer.appendChild(productCard);
     });
+
+    // Add event listeners for "Add to Cart" buttons
+    document.querySelectorAll('.add-to-cart-button').forEach((button, index) => {
+        button.addEventListener('click', () => addToCart(productList[index]));
+    });
 };
+
+const addToCart = (product) => {
+    alert(`${product.product.title} has been added to your cart!`);
+};
+
 
 const sortProducts = (order) => {
     let sortedProducts = [...products];

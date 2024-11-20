@@ -119,17 +119,6 @@ h1 {
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row for smaller screens */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 item per row for mobile screens */
-    }
-}
 
 
 /* Product Card */
@@ -199,6 +188,7 @@ h1 {
     background: #0056b3;
 }
 
+
 /* Keyframe Animation for Pulsing Dots */
 @keyframes pulse {
   0%, 80%, 100% {
@@ -213,4 +203,19 @@ h1 {
 .hidden {
   display: none;
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 item per row for mobile screens */
+    }
+}
+
 
