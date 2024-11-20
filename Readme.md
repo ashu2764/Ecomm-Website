@@ -45,6 +45,10 @@ Load Products:
 
 - Click the "Load Products" button to fetch product data from the API.
 
+Sory By :
+
+- Click the "Sort by" dropdown to sort the product by price.
+
 Dynamic Product Grid:
 
 - Products are displayed in a grid format with a responsive layout (3 per row on desktops, 2 on tablets, 1 on mobile).
