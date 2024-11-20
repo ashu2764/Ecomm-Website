@@ -8,17 +8,23 @@ body {
 
 /* Header Container */
 .container {
+    position: fixed; /* Makes the container fixed */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Align it to the left */
+    /* height: 10%; */
+    width: 100%; 
     text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
+    padding: 1px;
+    background-color: #1f71af;
     border-bottom: 2px solid #e0e0e0;
+    z-index: 1000; 
 }
 
 /* Header Styling */
 h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Load Products Button */
@@ -81,22 +87,24 @@ h1 {
 }
 
 .product-section {
+  
     padding: 40px 20px;
     background-color: #ffffff; 
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 120px;
     max-width: 1200px; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Sorting  */
-.labelSort{
+.sort-container {
+    display: flex; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+.sort-container label{
   padding: 10px;
   font-weight: bold;
-}
-.sort-container {
-  display: flex; 
-    margin: 20px 0;
-    text-align: center;
 }
 
 .sort-dropdown {
