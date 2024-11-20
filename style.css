@@ -88,6 +88,26 @@ h1 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
+/* Sorting  */
+.labelSort{
+  padding: 10px;
+  font-weight: bold;
+}
+.sort-container {
+  display: flex; 
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sort-dropdown {
+ 
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
 /* Product Grid Container */
 
 .product-grid {
